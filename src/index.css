@@ -10,6 +10,7 @@ body {
   background-position: bottom;
   background-color: #574b90;
   min-height: 100%;
+  color: white;
 }
 
 .nav-wrapper {
@@ -22,6 +23,11 @@ body {
 
 .form-in {
   background-color: #4e4382;
+}
+
+.card {
+  background-color: #4e4382;
+  color: white;
 }
 
 form {
