@@ -1,10 +1,10 @@
 import React from 'react'
 
-const RecipeSummary = () => {
+const RecipeSummary = ({recipe}) => {
   return (
     <div className="card z-depth-0 recipe-summary">
       <div className="card-content white-text text-darken-3">
-        <span className="card-title ">Recipe title</span>
+        <span className="card-title ">{recipe.title}</span>
         <p>Posted by Rinem</p>
         <p className="white-text">3rd September, 5am</p>
       </div>
