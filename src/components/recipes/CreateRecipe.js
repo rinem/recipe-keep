@@ -16,6 +16,7 @@ class CreateRecipe extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.createRecipe(this.state);
+    this.props.history.push('/');
   }
 
   render() {
