@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import RecipeList from '../recipes/RecipeList'
 import Notifications from './Notifications'
 import { connect } from 'react-redux'
-
+import { firestoreConnect } from 'react-redux-firebase'
+import { compose } from 'redux'
 class Home extends Component {
   render() {
     const { recipes } = this.props;
@@ -22,9 +23,15 @@ class Home extends Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log(state);
   return {
-    recipes: state.recipe.recipes
+    recipes: state.firestore.ordered.recipes
   }
 }
 
-export default connect(mapStateToProps)(Home)
+export default compose(
+  connect(mapStateToProps),
+  firestoreConnect([
+    { collection: 'recipes' }
+  ])
+)(Home)
