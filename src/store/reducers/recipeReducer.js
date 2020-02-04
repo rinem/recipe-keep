@@ -7,7 +7,13 @@ const initState = {
 }
 
 const recipeReducer = (state = initState, action) => {
-  return state;
+    switch (action.type) {
+        case 'CREATE_RECIPE':
+          console.log('create recipe', action.recipe);
+          return state;
+        default: 
+          return state;    
+    }
 };
 
 export default recipeReducer;
