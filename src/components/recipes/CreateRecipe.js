@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { createRecipe } from '../../store/actions/recipeActions'
+import { Redirect } from 'react-router-dom'
 class CreateRecipe extends Component {
   state = {
     title: '',
@@ -20,6 +21,8 @@ class CreateRecipe extends Component {
   }
 
   render() {
+    const { auth } = this.props;
+    if (!auth.uid) return <Redirect to='/signin' /> 
     return (
       <div className="container">
         <form className="form-in" onSubmit={this.handleSubmit}>
@@ -41,6 +44,12 @@ class CreateRecipe extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    auth: state.firebase.auth
+  }
+}
+
 const mapDispatchToProps = dispatch => {
   return {
     createRecipe: (recipe) => dispatch(createRecipe(recipe))
@@ -48,4 +57,4 @@ const mapDispatchToProps = dispatch => {
 }
 
 
-export default  connect(null, mapDispatchToProps)(CreateRecipe)
+export default  connect(mapStateToProps, mapDispatchToProps)(CreateRecipe)

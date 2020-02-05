@@ -3,10 +3,12 @@ import RecipeList from '../recipes/RecipeList'
 import Notifications from './Notifications'
 import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
+import { Redirect } from 'react-router-dom'
 import { compose } from 'redux'
 class Home extends Component {
   render() {
-    const { recipes } = this.props;
+    const { recipes, auth } = this.props;
+    if (!auth.uid) return <Redirect to='/signin' /> 
     return (
       <div className="home container">
         <div className="row">
@@ -25,7 +27,8 @@ class Home extends Component {
 const mapStateToProps = (state) => {
   console.log(state);
   return {
-    recipes: state.firestore.ordered.recipes
+    recipes: state.firestore.ordered.recipes,
+    auth: state.firebase.auth
   }
 }
 
