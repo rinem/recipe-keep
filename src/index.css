@@ -28,6 +28,7 @@ body {
 .card {
   background-color: #4e4382;
   color: white;
+  border-radius: 20px;
 }
 
 form {
