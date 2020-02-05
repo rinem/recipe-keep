@@ -5,7 +5,7 @@ const RecipeSummary = ({recipe}) => {
     <div className="card z-depth-0 recipe-summary">
       <div className="card-content white-text text-darken-3">
         <span className="card-title ">{recipe.title}</span>
-        <p>Posted by Rinem</p>
+        <p>Posted by  {recipe.authorFirstName} {recipe.authorLastName}</p>
         <p className="white-text">3rd September, 5am</p>
       </div>
     </div>

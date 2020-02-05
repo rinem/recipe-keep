@@ -2,11 +2,13 @@ export const createRecipe = (recipe) => {
   return (dispatch, getState, {getFirestore}) => {
     //Async call to database
     const firestore = getFirestore();
+    const profile = getState().firebase.profile;
+    const authorId = getState().firebase.auth.uid;
     firestore.collection('recipes').add({
       ...recipe,
-      authorFirstName: 'rinem',
-      authorLastName: 'test2',
-      authorId: 123,
+      authorFirstName: profile.firstName,
+      authorLastName: profile.lastName,
+      authorId: authorId,
       createdAt: new Date()
     }).then(() => {
       dispatch({ type: 'CREATE_RECIPE_SUCCESS' });
