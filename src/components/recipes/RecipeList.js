@@ -7,8 +7,8 @@ const RecipeList = ({recipes}) => {
     <div className="recipe-list section">  
       { recipes && recipes.map(recipe => {
         return (
-          <Link to={'/recipe/' + recipe.id }>
-            <RecipeSummary recipe={recipe} key={recipe.id} />
+          <Link to={'/recipe/' + recipe.id } key={recipe.id}>
+            <RecipeSummary recipe={recipe} />
           </Link>
         )
       })}  
