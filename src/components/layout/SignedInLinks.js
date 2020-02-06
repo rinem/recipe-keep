@@ -10,7 +10,6 @@ const SignedInLinks = (props) => {
       <ul className="right">
         <li><NavLink to='/create'>New Recipe</NavLink></li>
         <li><a href = "/" onClick={ props.signOut }>Log Out</a></li>
-        <li><NavLink to='/' className="btn btn-floating lighten-1"><i class="fa fa-user-o" aria-hidden="true"></i></NavLink></li>
       </ul>
     </div>
   )
