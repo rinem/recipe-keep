@@ -1,8 +1,3 @@
 A react app to store and save your favorite recipes and view recipes of other people too.
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The app is deployed on firebase and can be viewed here : https://recipe-keep-92c71.firebaseapp.com/
