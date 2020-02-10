@@ -48,6 +48,10 @@ textarea {
   color: #fff;
 }
 
+.username {
+  color: #eaacc1;
+}
+
 @media only screen and (max-width: 992px) {
   nav .brand-logo {
     left: 25%;
